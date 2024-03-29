@@ -4,8 +4,6 @@ services:
     build:
       context: .
       dockerfile: DockerfileServer
-    env_file:
-      - .env-prod
     container_name: app
     ports:
       - 5500:5500
