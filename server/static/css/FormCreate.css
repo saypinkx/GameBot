@@ -51,7 +51,7 @@ input {
 	left: 0%;
 	top: 80%;
 	right: 5%;
-	font-size: 4.5rem;
+	font-size: 4.0rem;
 	font-weight: 700;
 	color: #cc397b;
 	line-height: 1.222;
@@ -64,7 +64,7 @@ input {
 }
 
 .card-form {
-	padding: 2rem 1rem 0;
+	margin-top: 20%;
 }
 
 .input {
