@@ -39,14 +39,11 @@ async def start(callback: types.CallbackQuery):
 async def get_info_club(callback: types.CallbackQuery):
     chat_id = callback.message.chat.id
     last_message = callback.message.message_id
-    await bot.delete_message(chat_id=chat_id, message_id=last_message - 1)
-    await bot.delete_message(chat_id=chat_id, message_id=last_message - 1)
-    await callback.message.answer(text=response['start'], reply_markup=markups.start_markup())
+    await bot.delete_message(chat_id=chat_id, message_id=last_message)
+    await callback.message.answer(text=response['club'], reply_markup=markups.club_markup())
 
 
-#
-# @dp.callback_query_handler(text='club')
-# async def donate_blood(callback: types.CallbackQuery):
+
 
 
 async def main():

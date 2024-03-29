@@ -1,4 +1,9 @@
 from aiogram import types
+from aiogram.types.web_app_info import WebAppInfo
+
+urls = {
+    'form': 'https://shorturl.at/akmyK'
+}
 
 
 def start_markup():
@@ -11,4 +16,12 @@ def start_markup():
     keyboard.row(handler_button0, handler_button1)
     keyboard.row(handler_button2, handler_button3)
     keyboard.row(handler_button4)
+    return keyboard
+
+
+def club_markup():
+    keyboard = types.InlineKeyboardMarkup()
+    handler_button0 = types.InlineKeyboardButton(text='📩Подать заявку',
+                                                 web_app=WebAppInfo(url=urls['form']))
+    keyboard.row(handler_button0)
     return keyboard
