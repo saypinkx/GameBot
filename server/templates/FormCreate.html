@@ -3,8 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="{{ url_for('static', path='css/FormCreate.css') }}" rel="stylesheet">
 </head>
 <body>
+<div class="container">
+    <div class="card">
+        <div class="card-image">
+            <h2 class="card-heading">
+                Присоединяйся к нам!
+
+            </h2>
+        </div>
+        <form class="card-form">
+            <div class="input">
+                <input type="text" class="input-field" id="first_name" required/>
+                <label class="input-label">Имя</label>
+            </div>
+            <div class="input">
+                <input type="text" class="input-field id=second_name" required/>
+                <label class="input-label">Фамилия</label>
+
+            </div>
+
+            <div class="input">
+                <input type="text" class="input-field" id="age" required/>
+                <label class="input-label">Возраст</label>
+            </div>
+            <div class="input">
+                <input type="text" class="input-field" id="tag" required/>
+                <label class="input-label">Tег в игре</label>
+            </div>
+
+            <div class="action">
+                <button id='button' class="action-button">Отправить</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    let tg = window.Telegram.WebApp;
+    let button = document.getElementById("button");
+    tg.expand();
+
+    button.addEventListener("click", () => {
+    let first_name = document.getElementById("first_name");
+    let second_name = document.getElementById("second_name");
+    let age = document.getElementById("age");
+    let tag = document.getElementById("tag");
+    let data = {
+        first_name: first_name,
+        second_name: second_name,
+        age: age,
+        tag: tag
+    }
+    tg.sendData(JSON.stringify(data));
+    tg.close();
+    });
+</script>
 
 </body>
 </html>

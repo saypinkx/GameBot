@@ -25,14 +25,14 @@ if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=7000)
 
 
-app.mount("/server/static", StaticFiles(directory="./server/static"))
+app.mount("/server/static", StaticFiles(directory="./server/static"), name='static')
 
 templates = Jinja2Templates(directory="./server/templates")
 
 
 
 
-@app.get("/forms", response_class=HTMLResponse)
+@app.get("/form", response_class=HTMLResponse)
 async def get_form(request: Request):
     return templates.TemplateResponse(
         request=request, name="FormCreate.html")
