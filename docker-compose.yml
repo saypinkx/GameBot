@@ -4,6 +4,6 @@ services:
     build:
       context: .
       dockerfile: DockerfileServer
-    container_name: app
+    container_name: server
     ports:
       - 5500:5500
