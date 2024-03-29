@@ -76,12 +76,12 @@ input {
 }
 
 .action {
-	margin-top: 2rem;
+	margin-top: 4.5rem;
 }
 
 .action-button {
 	font: inherit;
-	font-size: 1.25rem;
+	font-size: 2.8rem;
 	padding: 1em;
 	width: 100%;
 	font-weight: 500;
