@@ -7,8 +7,7 @@
 body {
 	font-family: "DM Sans", sans-serif;
 	line-height: 1.5;
-	background-color: #f1f3fb;
-	padding: 0 2rem;
+	background-color: #FFF;
 }
 
 img {
@@ -23,48 +22,21 @@ input {
 	border-radius: 0;
 }
 
-.card {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	background-color: #FFF;
-	border-radius: 10px;
-	box-shadow: 0 10px 20px 0 rgba(#999, .25);
-	padding: .75rem;
 
-}
 
 .card-image {
 	border-radius: 8px;
 	overflow: hidden;
-	padding-bottom: 65%;
+	padding-bottom: 57%;
 	background-image: url('../images/kitty.jpeg');
 	background-repeat: no-repeat;
 	background-size: 55%;
-	background-position: 0 0%;
-	margin-left: 15%;
-	position: relative;
+	background-position: center;
+	position: center;
 }
 
-.card-heading {
-	position: absolute;
-	left: 0%;
-	top: 80%;
-	right: 5%;
-	font-size: 4.0rem;
-	font-weight: 700;
-	color: #cc397b;
-	line-height: 1.222;
-	small {
-		display: block;
-		font-size: .75em;
-		font-weight: 400;
-		margin-top: .25em;
-	}
-}
 
 .card-form {
-	margin-top: 20%;
 }
 
 .input {
