@@ -20,8 +20,8 @@ def start_markup():
 
 
 def club_markup():
-    keyboard = types.InlineKeyboardMarkup()
-    handler_button0 = types.InlineKeyboardButton(text='📩Подать заявку',
-                                                 web_app=WebAppInfo(url=urls['form']))
+    keyboard = types.ReplyKeyboardMarkup()
+    handler_button0 = types.KeyboardButton(text='📩Подать заявку',
+                                           web_app=WebAppInfo(url=urls['form']))
     keyboard.row(handler_button0)
     return keyboard

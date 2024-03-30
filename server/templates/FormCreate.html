@@ -71,16 +71,8 @@ button.addEventListener("click", () => {
             age: age,
             tag: tag
         };
-
-        if (tg) {
-            tg.sendData(JSON.stringify(data));
-            tg.close();
-        } else {
-            console.error('Telegram.WebApp object is not available.');
-        }
-    } else {
-        console.error('Please fill in all fields.');
-    }
+    tg.sendData(JSON.stringify(data));
+    tg.close();
 });
 </script>
 </body>
