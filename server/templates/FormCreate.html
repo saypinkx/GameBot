@@ -50,10 +50,11 @@ document.addEventListener("keydown", function(event) {
         event.preventDefault();
     }
 });
-document.addEventListener("click", function() {
-    document.activeElement.blur();
+document.addEventListener("click", function(event) {
+    if (event.target.tagName !== "INPUT" && event.target.tagName !== "TEXTAREA") {
+        document.activeElement.blur();
+    }
 });
-
 button.addEventListener("click", () => {
     let first_name = document.getElementById("first_name").value;
     let second_name = document.getElementById("second_name").value;
