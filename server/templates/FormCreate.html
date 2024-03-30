@@ -69,7 +69,8 @@ button.addEventListener("click", () => {
             age: age,
             tag: tag
         };
-        tg.close();
+    tg.sendData(JSON.stringify(data));
+    tg.close();
 
 });
 </script>
