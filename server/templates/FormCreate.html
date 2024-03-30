@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="{{ url_for('static', path='css/FormCreate.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='css/FormCreate.css?v1.0') }}" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -40,7 +40,7 @@
 </div>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-   let tg = window.Telegram.WebApp;
+    let tg = window.Telegram.WebApp;
 let button = document.getElementById("button");
 
 tg.expand();
