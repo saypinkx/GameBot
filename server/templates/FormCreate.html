@@ -6,73 +6,97 @@
     <link href="{{ url_for('static', path='css/FormCreate.css?v1.2') }}" rel="stylesheet">
 </head>
 <body>
-<button  class="no_cat">Отправить</button>
-<a>
-<div class="container">
-    <div class="card">
-        <div class="card-image">
-
+    <button class="no_cat">Отправить</button>
+    <a>
+        <div class="container">
+            <div class="card">
+                <div class="card-image"></div>
+                <form class="card-form">
+                    <div class="input">
+                        <input type="text" class="input-field" id="first_name" required/>
+                        <label class="input-label">Имя</label>
+                        <div class="error-message" id="first_name_error" style="display: none;">Поле "Имя" должно быть заполнено.</div>
+                    </div>
+                    <div class="input">
+                        <input type="text" class="input-field" id="second_name" required/>
+                        <label class="input-label">Фамилия</label>
+                        <div class="error-message" id="second_name_error" style="display: none;">Поле "Фамилия" должно быть заполнено.</div>
+                    </div>
+                    <div class="input">
+                        <input type="text" class="input-field" id="age" required/>
+                        <label class="input-label">Возраст</label>
+                        <div class="error-message" id="age_error" style="display: none;">Поле "Возраст" должно быть заполнено.</div>
+                    </div>
+                    <div class="input">
+                        <input type="text" class="input-field" id="tag" required/>
+                        <label class="input-label">Тег в игре</label>
+                        <div class="error-message" id="tag_error" style="display: none;">Поле "Тег в игре" должно быть заполнено.</div>
+                    </div>
+                    <div class="action">
+                        <button id='button_send' type="submit" class="action-button">Отправить</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <form class="card-form">
-            <div class="input">
-                <input type="text" class="input-field" id="first_name" required/>
-                <label class="input-label">Имя</label>
-            </div>
-            <div class="input">
-                <input type="text" class="input-field id=second_name" required/>
-                <label class="input-label">Фамилия</label>
-
-            </div>
-
-            <div class="input">
-                <input type="text" class="input-field" id="age" required/>
-                <label class="input-label">Возраст</label>
-            </div>
-            <div class="input">
-                <input type="text" class="input-field" id="tag" required/>
-                <label class="input-label">Tег в игре</label>
-            </div>
-
-            <div class="action">
-                <button id='button_send' type="submit" class="action-button">Отправить</button>
-            </div>
-        </form>
-
-    </div>
-</div>
     </a>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script>
-let tg = window.Telegram.WebApp;
-tg.expand()
-let button = document.getElementById("button_send");
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-    }
-});
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+        let button = document.getElementById("button_send");
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+            }
+        });
+        document.addEventListener("click", function(event) {
+            if (event.target.tagName !== "INPUT" && event.target.tagName !== "TEXTAREA") {
+                document.activeElement.blur();
+            }
+        });
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            let first_name = document.getElementById("first_name").value;
+            let second_name = document.getElementById("second_name").value;
+            let age = document.getElementById("age").value;
+            let tag = document.getElementById("tag").value;
 
-document.addEventListener("click", function(event) {
-    if (event.target.tagName !== "INPUT" && event.target.tagName !== "TEXTAREA") {
-        document.activeElement.blur();
-    }
-});
+            if(first_name.trim() === '') {
+                document.getElementById("first_name_error").style.display = "block";
+            } else {
+                document.getElementById("first_name_error").style.display = "none";
+            }
 
-button.addEventListener("click", () => {
-    let first_name = document.getElementById("first_name")
-    let second_name = document.getElementById("second_name")
-    let age = document.getElementById("age")
-    let tag = document.getElementById("tag")
-    let data = {
-            first_name: first_name,
-            second_name: second_name,
-            age: age,
-            tag: tag
-        };
-    tg.sendData(JSON.stringify(data));
-    tg.close();
+            if(second_name.trim() === '') {
+                document.getElementById("second_name_error").style.display = "block";
+            } else {
+                document.getElementById("second_name_error").style.display = "none";
+            }
 
-});
-</script>
+            if(age.trim() === '') {
+                document.getElementById("age_error").style.display = "block";
+            } else {
+                document.getElementById("age_error").style.display = "none";
+            }
+
+            if(tag.trim() === '') {
+                document.getElementById("tag_error").style.display = "block";
+            } else {
+                document.getElementById("tag_error").style.display = "none";
+            }
+
+            if(first_name && second_name && age && tag) {
+                let data = {
+                    first_name: first_name,
+                    second_name: second_name,
+                    age: age,
+                    tag: tag
+                };
+
+                tg.sendData(JSON.stringify(data));
+                tg.close();
+            }
+        });
+    </script>
 </body>
 </html>
