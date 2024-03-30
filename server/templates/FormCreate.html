@@ -59,29 +59,18 @@ document.addEventListener("click", function(event) {
 });
 
 button.addEventListener("click", () => {
-    let first_name = document.getElementById("first_name").value;
-    let second_name = document.getElementById("second_name").value;
-    let age = document.getElementById("age").value;
-    let tag = document.getElementById("tag").value;
-
-    if(first_name && second_name && age && tag) {
-        let data = {
+    let first_name = document.getElementById("first_name")
+    let second_name = document.getElementById("second_name")
+    let age = document.getElementById("age")
+    let tag = document.getElementById("tag")
+    let data = {
             first_name: first_name,
             second_name: second_name,
             age: age,
             tag: tag
         };
+        tg.close();
 
-        if (tg) {
-
-            tg.close();
-
-        } else {
-            console.error('Telegram.WebApp object is not available.');
-        }
-    } else {
-        console.error('Please fill in all fields.');
-    }
 });
 </script>
 </body>
