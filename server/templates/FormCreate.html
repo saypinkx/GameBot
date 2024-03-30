@@ -45,7 +45,14 @@
 <script>
     let tg = window.Telegram.WebApp;
 let button = document.getElementById("button_send");
-
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+    }
+});
+document.addEventListener("click", function() {
+    document.activeElement.blur();
+});
 
 button.addEventListener("click", () => {
     let first_name = document.getElementById("first_name").value;
