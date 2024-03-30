@@ -37,6 +37,7 @@ input {
 
 
 .card-form {
+
 }
 
 .input {
@@ -70,7 +71,7 @@ input {
 		border-bottom-color: #cc397b;
 		&+.input-label {
 			color: #cc397b;
-			transform: translateY(-2.5rem);
+			transform: translateY(-5.0rem);
 		}
 	}
 }
