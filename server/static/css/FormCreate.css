@@ -8,6 +8,7 @@ body {
 	font-family: "DM Sans", sans-serif;
 	line-height: 1.5;
 	background-color: #FFF;
+	height: var(--tg-viewport-height);
 }
 
 img {

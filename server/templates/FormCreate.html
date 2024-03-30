@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="{{ url_for('static', path='css/FormCreate.css?v1.1') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='css/FormCreate.css?v1.2') }}" rel="stylesheet">
 </head>
 <body>
 <button  class="no_cat">Отправить</button>
@@ -44,6 +44,7 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
 let tg = window.Telegram.WebApp;
+tg.expand()
 let button = document.getElementById("button_send");
 document.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
