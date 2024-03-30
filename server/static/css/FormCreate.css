@@ -111,5 +111,7 @@ input {
     margin-right: 10%;
 }
 
-
+.no_cat {
+display:none;
+}
 
