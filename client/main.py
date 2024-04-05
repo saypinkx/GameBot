@@ -43,7 +43,7 @@ async def get_info_club(callback: types.CallbackQuery):
     await callback.message.answer(text=response['club'], reply_markup=markups.club_markup())
 
 
-@dp.message_handler(content_types=[types.WebAppData])
+@dp.message_handler(content_types=['web_app_data'])
 async def start(message: types.Message):
     await message.answer(text='hello', reply_markup=markups.start_markup())
 
