@@ -8,6 +8,7 @@ form_router = APIRouter(prefix='/api/forms')
 
 @form_router.post('', status_code=201)
 def create_form(form: Annotated[FormCreate, Body()]) -> str:
+    print(form.chat_id, form.link_tg)
     form_db = Form()
     form_db.fill_form(form.dict())
     form_db.add()
